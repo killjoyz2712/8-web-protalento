@@ -1,0 +1,20 @@
+h2{
+    color: blue;
+}
+
+h1{
+    color: chartreuse;
+}
+
+p{
+    font-size: 100px;
+    font-weight: bold;
+    background-color: coral;
+}
+
+body{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
