@@ -1,0 +1,14 @@
+/* Va con almohadilla por que es el id */
+#nombre{
+    color: blue;
+}
+.titulo{
+    color: green;
+}
+.titulo.grande{
+    color: yellow;
+}
+.parrafo{
+    font-size: 18px;
+    color: red;
+}
