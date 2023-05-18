@@ -1,0 +1,41 @@
+/*
+A quien estoy refiriendome {
+   propiedad? : valor
+ } 
+ */
+
+ body{
+    margin: 0;
+    padding: 0;
+ }
+
+ #navegacion{
+    background-color: #D90401;
+ } 
+
+ #logo{
+    height:60px;
+    margin: 10px;
+    padding: 10px;
+    /* margin-top:10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;*/
+
+ }
+
+#bloque{
+    float:right;
+    margin-top: 40px;
+}
+
+ .link{
+    color: #ffffff;
+    text-decoration: none;
+    /* padding-top: 35px;
+    padding-right: 27px;
+    padding-bottom: 40px;
+    padding-left: 25px; */
+    padding: 35px 27px 40px 25px;
+    font-family: Arial;
+ }

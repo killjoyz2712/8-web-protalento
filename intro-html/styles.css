@@ -1,9 +1,12 @@
 /* Va con almohadilla por que es el id */
-#nombre{
+/* #nombre{
     color: blue;
+}*/
+.titulo{
+    color: pink !important;
 }
 .titulo{
-    color: green;
+    color: green !important;
 }
 .titulo.grande{
     color: yellow;
