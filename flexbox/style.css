@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.container{
+    display: flex;
+    flex-flow: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(237, 100, 173);
+}
+
+.navegacion{
+    width: 100%;
+    height: 8%;
+    background-color: brown;
+}
+
+.cuadrado{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    height: 60%;
+    background-color: chartreuse;
+    flex-wrap: wrap;
+}
+
+.hijo_cuadrado{
+    
+    display: flex;
+    flex-shrink: inherit;
+    flex-flow: column;
+    width: 20%;
+    height:40%;
+    background-color: cadetblue;
+    background-image: url(./mifoto.png);
+    background-size: cover;
+    border: rgb(255, 0, 0) solid 5px;
+    border-radius: 150px;
+}
+
+
+
+.container p{
+    border: rgb(255, 183, 0) solid 5px;
+    height: 10%;
+    
+}
