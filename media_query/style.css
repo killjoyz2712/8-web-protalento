@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    width: 97vw;
+    height: 97vh;
+    background-color: cyan;
+    padding: 3vw;
+}
+
+.rectangulo{
+    display: flex;
+    height: 30%;
+    width: 95%;
+    flex-flow: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: chocolate;
+}
+
+.cuadrado{
+    width: 20%;
+    height: 80%;
+    background-color: cadetblue;
+}
+
+
+@media screen and (max-width: 740px) {
+    .rectangulo{
+        height: 90%;
+        flex-flow: column;
+        
+    }
+
+    .cuadrado{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 30%;
+    }
+}
