@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Este es mi formulario</h1>
+        <form name="formulario" method="get" action="/">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Ingresa un nombre"><br/>
+
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" placeholder="Ingresa un apellido"><br/>
+            
+            <label for="edad">Edad</label>
+            <input type="text" name="edad" placeholder="Ingresa una edad"><br/>
+            
+            Password <input type="password" name="password" placeholder="Ingresa un password"><br/>
+            
+            <input type="range" name="rango" min="1" max="80" step="10"><br/>
+            <input type="date" name="fecha" placeholder="Ingresa un fecha"><br/>
+            <input type="color" name="color" placeholder="Ingresa un color"><br/>
+            <input type="file" name="fecha" placeholder="Ingresa un fecha"><br/>
+
+            <br/>
+
+            <input type="checkbox" id="acepto" name="acepto"> <label for="acepto">Me quiero suscribir al newsletter</label>
+            <br/>
+
+            <label for="seguro">¿Estas seguro?</label>
+            <input type="radio" name="seguro"> Si
+            <input type="radio" name="seguro"> No
+            <input type="radio" name="seguro"> Tal vez
+
+            <br/><br/>
+            <button type="reset">Resetear</button>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
