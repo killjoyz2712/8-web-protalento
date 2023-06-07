@@ -70,3 +70,9 @@ button{
 .link:hover{
     color: lightgray;
 }
+
+@media screen and (max-width:630px) {
+    input.busqueda{
+        width: 284px;
+    }
+}
