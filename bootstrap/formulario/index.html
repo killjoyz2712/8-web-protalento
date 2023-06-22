@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-3">Dom y Bootstrap</h1>
+        <form method="get">
+            <label class="form-label" for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa un nombre">
+            <label class="form-label mt-3">Imagen</label>
+            <input type="url" id="imagen" name="imagen" class="form-control"  placeholder="Ingresa una imagen">
+            <label class="form-label mt-3">Numero</label>
+            <input type="number" id="numero" name="numero" class="form-control" placeholder="Ingresa un numero">  
+            <button type="button" class="btn btn-success my-4" onclick="enviar()">Enviar</button>
+        </form>
+        <p>Esta card va a cambiar segun lo que pongas arriba:</p>
+        <div class="card mt-3" style="width: 18rem;">
+            <img src="" id="foto" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title" id="titulo"></h5>
+              <p class="card-text" id="descripcion"></p>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
