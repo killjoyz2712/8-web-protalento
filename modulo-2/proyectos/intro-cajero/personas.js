@@ -6,6 +6,9 @@ let cuentas = [
 
 document.querySelector("#persona").addEventListener("change",leerPersona)
 
+
+
+
 // cuentas[1] <- Gera
 
 function leerPersona(){
