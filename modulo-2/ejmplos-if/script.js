@@ -28,3 +28,5 @@ function limpiar(){
     document.getElementById("nombre").value = "";
     document.getElementById("password").value = "";
 }
+
+limpiar()
