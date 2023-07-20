@@ -18,7 +18,7 @@ const dibujar = (drinks) => {
         div.innerHTML+=`
             <div class="card">
                 <div class="card-image">
-                <figure class="image is-4by3">
+                <figure class="image is-square">
                     <img src="${drinks[i].strDrinkThumb}" alt="${drinks[i].strDrink}">
                 </figure>
                 </div>
