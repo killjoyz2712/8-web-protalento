@@ -1,14 +1,5 @@
 let x = 2;
 
-function resolve(){
-    console.log("Resolver promesa")
-}
-
-function reject(){
-    console.log("Rechazar promesa")
-    return null;
-}
-
 const promesa = new Promise((resolve, reject)=>{
     if(x == 1)
         resolve(true);
