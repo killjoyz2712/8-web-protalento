@@ -1,29 +1,21 @@
 const {Router} = require('express');
-
+const {saludo,edad,empleados,crearEmpleado} = require('../controllers/controllers');
 const router = Router();
 
 // req = request, res = response
-router.get('/hola/:nombre', function(req,res){
-    const {nombre} = req.params;
-    res.status(200).json({"respuesta":`Buenas noches ${nombre}`})
-})
-router.get('/adios', function(req,res){
-    res.status(200).json({"respuesta":"adios"})
-})
-router.get('/dias', function(req,res){
-    res.status(200).json({"respuesta":"Buenos Dias"})
-})
+router.get('/hola/:nombre', saludo)
 
-router.post('/regresaDatos', function(req,res){
-    const {Edad}= req.body
-    if(Edad > 50){
-        res.status(200).json("Ya eres viejo")
-        return
-    }else{
-        res.status(200).json("Eres joven")
-        return
-    }
-    res.status(200).json("No hay edad")
-})
+// router.get('/adios', function(req,res){
+//     res.status(200).json({"respuesta":"adios"})
+// })
+// router.get('/dias', function(req,res){
+//     res.status(200).json({"respuesta":"Buenos Dias"})
+// })
+
+router.post('/regresaDatos', edad)
+router.get('/empleados',empleados)
+router.post('/crearEmpleado',crearEmpleado)
 
 module.exports = router;
+
+//DELETE FROM empleados WHERE correo = a@a.a 
