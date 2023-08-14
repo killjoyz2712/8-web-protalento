@@ -14,7 +14,7 @@ router.get('/hola/:nombre', saludo)
 
 router.post('/regresaDatos', edad)
 router.get('/empleados',empleados)
-router.post('/crearEmpleado',crearEmpleado)
+router.post('/crear-empleado',crearEmpleado)
 
 module.exports = router;
 
