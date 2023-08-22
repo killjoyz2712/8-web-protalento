@@ -22,6 +22,8 @@ A continuación se detallan los pasos para configurar una API utilizando Express
 
 4. Crear Archivo .env: Crear un archivo .env con las variables de configuración necesarias.
 
+`APP_PORT=3000`
+
 5. Inicializar Express en index.js:
 
 ```
@@ -110,7 +112,7 @@ npx sequelize-cli init
 
  14. Se crearon models y migrations de tu tabla
 
- 14.5 Si no requieres las fechas de creacion y actualizacion puedes eliminarlas de tu migration:
+ 15. Si no requieres las fechas de creacion y actualizacion puedes eliminarlas de tu migration:
  ```
  createdAt: {
         allowNull: false,
@@ -121,7 +123,7 @@ npx sequelize-cli init
         type: Sequelize.DATE,
       }
 ```
-15. Si la tabla tiene foreign keys, agrega la relacion al bloque associate
+16. Si la tabla tiene foreign keys, agrega la relacion al bloque associate
 ```
  static associate(models) {
       // define association here
@@ -131,13 +133,13 @@ npx sequelize-cli init
       })
     }
 ```
- 16. Elimina el bloque associate si la tabla no tiene relacione
+ 17. Elimina el bloque associate si la tabla no tiene relacione
 ```
    static associate(models) {
       // define association here
     }
 ```
-17. Para migrar o crear la base de datos usamos
+18. Para migrar o crear la base de datos usamos
 
 `npx sequelize-cli db:migrate`
 
