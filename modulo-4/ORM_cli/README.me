@@ -1,0 +1,106 @@
+1. Correr npm init -y
+2. Instalar: npm i express pg sequelize pg-hstore nodemon dotenv
+3. Modificar package.json y agregar a scripts:
+    "dev": "nodemon"
+4. Crear nuestro .env con variables de configuracion
+5. Crear archivo index.js e inicializar express
+
+require('dotenv').config()
+
+const express = require('express')
+
+// router
+
+const app = express()
+app.use(express.json())
+
+app.listen(process.env.APP_PORT)
+
+6. Crear carpeta router e inicializarlo
+
+const {Router} = require('express')
+const router = Router()
+
+router.get('/',(req, res)=>{
+    res.json({"hola":"mundo"})
+})
+
+module.exports = router;
+
+7. Agregar el router a nuestra app de express
+
+const router = require('./router/router')
+
+//Colocar despues de const app = express()
+app.use(router)
+
+8. Crear archivo controllers y separar las funciones del router
+
+const holaMundo = (req, res)=>{
+    res.json({"hola":"mundo"})
+}
+
+module.exports = {holaMundo}
+
+
+===
+
+const {Router} = require('express')
+const router = Router()
+const {holaMundo} = require("../controllers/controllers")
+
+router.get('/', holaMundo)
+
+module.exports = router;
+
+9. Instalar sequelize-cli
+
+sudo npm install --save-dev sequelize-cli pg
+
+10. inicializar sequelize-cli
+
+npx sequelize-cli init
+
+11. Ir a config/config.json y cambiar la configuracion de nuestra bdd local
+
+12. Agregar timestamps en false y quoteIndentifiers en false tambien
+
+ "development": {
+    "username": "postgres",
+    "password": "root",
+    "database": "veterinaria",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "define":{
+      "timestamps": false
+    },
+    "quoteIdentifiers": false
+  },
+
+ 13. Ir a consola y correr:
+ 
+ npx sequelize-cli model:generate --name Clientes --attributes nombre:string,direccion:string,telefono:string
+
+ 14. Se crearon models y migrations de tu tabla
+
+15. Si la tabla tiene foreign keys, agrega la relacion al bloque associate
+
+ static associate(models) {
+      // define association here
+      Mascotas.belongsTo(models.Clientes,{
+        foreginKey:'id_cliente',
+        as: 'cliente'
+      })
+    }
+
+ 16. Elimina el bloque associate si la tabla no tiene relacione
+
+   static associate(models) {
+      // define association here
+    }
+
+17. Para migrar o crear la base de datos usamos
+
+npx sequelize-cli db:migrate
+
+
