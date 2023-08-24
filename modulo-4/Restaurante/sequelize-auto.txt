@@ -1,0 +1,12 @@
+//Sequlize Auto config
+
+npx sequelize-auto 
+-h localhost  <- Host base
+-d restaurante  <- nombre de la base
+-u postgres <- usuario para la conexion
+-x 1234  <- Password de la conexion
+-p 5432 <- Puerto de la conexion
+-s public  <- Schema que usa (defualt es public)
+--dialect postgres <- postgres,mysql,sqlserver,msql
+-o ./models <- carpeta donde se guardaran los modelos
+-l esm <- ECMASCRIPT Model (Manera en que se escriben) (default)
