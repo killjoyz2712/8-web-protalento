@@ -22,9 +22,48 @@ const insertarCliente = async (req, res) =>{
 
 }
 
+const actualizarCliente = async (req, res) =>{
+    const Clientes = models.Clientes
+    const id = req.params.id
+
+    const cliente = await Clientes.findOne({
+        where:{
+            id:id
+        }
+    })
+
+    //parmas para el GET body para el POST
+    const nombre = req.body.nombre
+    const direccion = req.body.direccion
+    const telefono = req.body.telefono
+
+    //Sobreescribiendo
+    cliente.nombre = nombre
+    cliente.direccion = direccion
+    cliente.telefono = telefono
+
+    await cliente.save()
+
+    res.json(cliente)
+
+}
+
 const obtenerClientes = async (req, res) =>{
     const Clientes = models.Clientes
     const clientes = await Clientes.findAll()
+    //Si necesitamos headers los sacamos asi:
+    //console.log(req.headers)
+    res.json(clientes)
+}
+
+const obtenerCliente = async (req, res) =>{
+    const Clientes = models.Clientes
+    const id = req.params.id
+    const clientes = await Clientes.findOne({
+        where:{
+            id:id
+        }
+    })
     //Si necesitamos headers los sacamos asi:
     //console.log(req.headers)
     res.json(clientes)
@@ -46,4 +85,4 @@ const borrarCliente = async (req, res) =>{
 
 
 
-module.exports = {holaMundo, insertarCliente, obtenerClientes, borrarCliente}
+module.exports = {holaMundo, insertarCliente, obtenerCliente, obtenerClientes, borrarCliente, actualizarCliente}

@@ -14,9 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   Clientes.init({
     nombre: DataTypes.STRING,
     direccion: DataTypes.STRING,
-    telefono: DataTypes.STRING,
-    createdat: DataTypes.DATE,
-    updatedat: DataTypes.DATE
+    telefono: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Clientes',
