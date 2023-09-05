@@ -1,7 +1,34 @@
 import {Router} from "express"
 import Usuario from "../models/Usuario.js";
-
+import authMiddleware from "../middleware/auth.js";
 const router = Router();
+
+router.get("/hello", function(req,res){
+    res.json({"Hola": "Mundo"})
+})
+/*
+router.use((req,res,next)=>{
+    if(req.query.password == "perrito123"){
+        next()
+    }else if(req.query.password == "gato123"){
+        // res.send({
+        //    alert:"Password sospechoso"
+        // })
+        console.log("Password sospechoso")
+        next()
+    }else{
+        res.send("No tienes acceso")
+    }
+
+    console.log(`En tro al middleware desde: ${req.method} ${req.ip}`)
+})*/
+
+router.use(authMiddleware)
+
+
+router.get("/goodbye", function(req,res){
+    res.json({"adios": "Mundo"})
+})
 
 router.get('/getAll', async function(req, res){
     try {
