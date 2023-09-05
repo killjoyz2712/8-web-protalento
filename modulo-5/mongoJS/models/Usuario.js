@@ -8,6 +8,14 @@ const user = new mongoose.Schema({
     age:{
         required: true,
         type: Number
+    },
+    email:{
+        required: true,
+        type: String
+    },
+    password:{
+        required: true,
+        type: String
     }
 });
 
