@@ -1,4 +1,4 @@
-const authMiddleware = (err, req,res,next)=>{
+const authMiddleware = (err, req, res, next)=>{
     if(err){
         console.log("Sucedio un error")
         res.status(401).send("No se encontro")

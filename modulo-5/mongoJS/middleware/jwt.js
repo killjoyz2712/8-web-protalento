@@ -9,7 +9,7 @@ const authJWT = (req,res ,next)=>{
 
     jwt.verify(token,'robertoRomero',(err, data)=>{
         if(err){
-            res.sendStatus(403)
+            res.status(403).send(err)
             return;
         }
         console.log(data)

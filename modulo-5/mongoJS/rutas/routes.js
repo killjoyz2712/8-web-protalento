@@ -34,8 +34,18 @@ router.get("/goodbye",authJWT, function(req,res){
 
 router.get('/getAll',authJWT,async function(req, res){
     try {
-       const result = await Usuario.find()
-       res.status(200).json(result)
+        const result = await Usuario.find()
+        res.status(200).json(result)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
+})
+
+router.get('/all', async function(req, res){
+    try {
+        const result = await Usuario.find()
+        res.status(200).json(result)
     } catch (error) {
         console.log(error)
         res.status(500).json(error)
@@ -54,7 +64,7 @@ router.post('/registro', async function(req, res){
         const guardar = await usuario.save();
         res.status(200).json(guardar)
     } catch (error) {
-        res.status(500).json("Error")
+        res.status(500).json(req.body)
     }
 })
 
@@ -63,23 +73,9 @@ router.post('/login',async function(req,res){
     const password = req.body.password
 
     try {
-        const result = await Usuario.findOne({
-            email
-        })
-
-        if(!result){
-            res.status(401).json({msg:"Usuario y/o password incorrectos"})
-            return;
-        }
-
-        if(result.password !== password){
-            res.status(401).json({msg:"Usuario y/o password incorrectos"})
-            return;
-        }
-
         let objetoJWT = {
-            email: result.email,
-            name: result.name
+            email,
+            password
         }
 
         jwt.sign(objetoJWT,'robertoRomero',(err,token)=>{
@@ -93,10 +89,10 @@ router.post('/login',async function(req,res){
         });
         
         //res.status(200).json(result)
-     } catch (error) {
-         console.log(error)
-         res.status(500).json(error)
-     }
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error)
+    }
 
 })
 
