@@ -1,20 +1,90 @@
 @import "../node_modules/bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 
 $color-primario:#ffffff; 
-$color-secundario: #aeae20;
+$tamano-fuente:14px;
+$fuente: 'Raleway', sans-serif;
+$fuente-secundaria: 'Comic Sans';
 
 body{
     background-color: $color-primario;
+    font-family: $fuente;
 }
 
-p .titulo{
-    color: $color-secundario
-}
+.main-block{
+    background-color: #666666;
+    background-image: url("https://e0.pxfuel.com/wallpapers/308/440/desktop-wallpaper-neon-for-your-or-mobile-screen-and-easy-to-neon-sky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    height: 80vh;
+    padding:30px;
+    display: flex;
+    align-items: center;
+    position: relative;
 
-p{
-    .titulo{
-        color: $color-secundario
+    &:before{
+        content:"";
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        backdrop-filter:blur(3px)
     }
+
+    #intermedio {
+        z-index: 1;
+    /* h1 .title <h1><element class='title'/></h1>*/
+    /* h1.title <h1 class='title'></h1> En sass con & */
+
+        h1 {
+            &.title{
+                font-weight: 800;
+                font-size: 80px;
+
+                @include mobile{
+                    font-size: 20px;
+                    color: greenyellow
+                }
+                @include tablet{
+                    font-size: 35px;
+                    color: yellow
+                }
+                @include desktop{
+                    font-size: 50px;
+                    color:#ffffff;
+                }
+                @include fullhd{
+                    /*Para pantallas muy grandes */
+                }
+
+            }
+        }
+
+        p{
+            color:#ffffff;
+            font-size: $tamano-fuente;
+            margin-bottom:15px;
+
+            &.subtitulo{
+                font-size:20px;
+                font-weight: 600;
+            }
+        }
+
+        .button{
+            background-color: chartreuse;
+            color: #000;
+            border-radius: 20px;
+            font-weight: bold;
+            &:hover{
+                background-color: rgb(93, 163, 22);
+                color: #000;
+
+            }
+        }
+    }
+
 }
-
-
