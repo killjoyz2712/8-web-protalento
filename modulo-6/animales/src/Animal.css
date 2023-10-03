@@ -1,0 +1,4 @@
+.animales{
+    display: flex;
+    flex-wrap: wrap;
+}
