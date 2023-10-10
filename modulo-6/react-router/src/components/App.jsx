@@ -10,7 +10,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="blog" element={<Blog />} />
+        <Route path="blog/:id" element={<Blog />} />
         <Route path="contacto" element={<Contacto />} />
         {/* pagina 404 */}
         <Route path="*" element={<h3> Page not found 404 </h3>} />
