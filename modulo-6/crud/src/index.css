@@ -1,0 +1,15 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+nav{
+  display: flex;
+  background-color: dodgerblue;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+
+nav a{
+  color:white
+}
